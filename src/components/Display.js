@@ -3,8 +3,8 @@
  */
 import React from 'react';
 import BasicTable from './BasicTable';
-import firebase from 'firebase';
-import 'firebase/firestore';
+// import firebase from 'firebase';
+// import 'firebase/firestore';
 
 import './Display.scss';
 
@@ -26,23 +26,23 @@ class Display extends React.Component {
       });
   }
 
-  fetchDataFirebase = () => {
-    const fdb = firebase.firestore();
-    fdb
-      .collection("recycled_material")
-      .get()
-      .then(snapshot => {
-        const data = {};
-        snapshot
-          .forEach(entry => {
-            data[entry.id] = entry.data();
-          })
-        this.setState({ dataFirebase: data })
-      })
-      .catch(e => {
-        console.error("something went wrong", e)
-      })
-  }
+  // fetchDataFirebase = () => {
+  //   const fdb = firebase.firestore();
+  //   fdb
+  //     .collection("recycled_material")
+  //     .get()
+  //     .then(snapshot => {
+  //       const data = {};
+  //       snapshot
+  //         .forEach(entry => {
+  //           data[entry.id] = entry.data();
+  //         })
+  //       this.setState({ dataFirebase: data })
+  //     })
+  //     .catch(e => {
+  //       console.error("something went wrong", e)
+  //     })
+  // }
 
   /**
    * This is a React Component Lifecycle method. 
